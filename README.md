@@ -1,24 +1,32 @@
 # Sean Fay
 
-I build applied AI systems around real operating work: workflow audits, integrations, agent controls, evals, and the last-mile implementation details that decide whether automation actually holds up.
+I am trying to understand what changes when AI stops being a chat box and starts becoming part of how work actually gets done.
 
-My background is enterprise solution engineering and partner engineering. I have worked with regulated enterprise customers, technical partners, SI/GSI teams, sales teams, product teams, and operators who need software to solve a concrete business problem instead of producing another demo.
+That question shows up everywhere for me: in customer workflows, partner integrations, field teams, research loops, personal systems, small-business operations, and the tools I build for myself. I am interested in AI as an operating layer, not a novelty. The useful work is figuring out where it belongs, where it does not, how to measure it, and how to keep it from creating new messes faster than it solves old ones.
 
-The through-line is forward-deployed execution:
+My background is enterprise solution engineering and partner engineering. I have worked with regulated enterprise customers, technical partners, SI/GSI teams, sales teams, product teams, and operators who need software to solve a real business problem. That background shaped how I think about AI: the model is rarely the whole system. The workflow, data, incentives, review points, integration path, and proof of value matter just as much.
 
-- get close enough to the workflow to understand where the real constraint is
-- separate what should be automated from what should stay manual
-- build thin, inspectable systems over existing tools and data
-- add evidence, review, and rollback paths before trusting autonomy
-- explain the technical path in business language without sanding off the failure modes
+The work I am most drawn to now looks a lot like forward-deployed AI:
 
-## Current Focus
+- sit close to the people doing the work
+- map the workflow until the real constraint is visible
+- decide what should be automated and what should stay human
+- build the smallest useful system over the tools already in place
+- add evidence, evals, review, and rollback before trusting autonomy
+- explain the technical path in business language without hiding the failure modes
 
-- Forward-deployed AI and agentic workflow design
-- Evaluation and acceptance layers for AI-generated work
-- Partner integrations, technical enablement, and ecosystem GTM
-- Local-first automation systems for operators and small teams
-- Practical AI ops: queues, evidence, review boundaries, cost, and failure handling
+## What I Am Building Toward
+
+I want to build AI systems that make operators meaningfully faster, not dashboards that make teams feel modern for a quarter.
+
+That means I care about:
+
+- agents that can use tools without being given unlimited trust
+- evals that test the actual job, not just the final answer
+- acceptance layers that tell an operator whether the work is done
+- workflow audits that separate real leverage from automation theater
+- integrations that respect the systems a company already depends on
+- AI products that are boring enough to run every day
 
 ## Public Work
 
@@ -26,44 +34,48 @@ The through-line is forward-deployed execution:
 
 An acceptance layer for validating agentic completion against user intent and evidence.
 
-Proofline is built around a simple operational problem: agents are increasingly good at producing plausible work, but operators still need a way to decide whether the work is actually complete. The project focuses on evidence, intent matching, and completion checks instead of trusting a model's final summary.
+Proofline exists because agent summaries are not enough. If an agent claims a task is complete, there should be a way to inspect the evidence, compare the result to the original intent, and decide whether the work actually holds up.
+
+The project is a bet that the next useful layer in agentic work is not another prettier chat UI. It is the control plane around the work: evidence, completion checks, escalation paths, and a way for humans to trust outputs without pretending uncertainty disappeared.
 
 ### [Knox Analytics Lab](https://lab.knoxanalytics.com/)
 
-Long-form writing on applied AI, agent operations, workflow automation, and production failure modes.
+Writing on applied AI, agent operations, workflow automation, and production failure modes.
 
-I use the Lab to document what I am learning from building and operating AI systems: where human review belongs, why queue design matters, how agentic workflows fail, and what controls make autonomy safer to deploy.
+The Lab is where I pressure-test the ideas behind the systems I am building: where human review belongs, why queues matter, what makes agent work auditable, when AI is the wrong answer, and how to tell the difference between a demo and something an operator can depend on.
 
 ### [Knox Analytics](https://knoxanalytics.com/)
 
 An applied AI consulting practice focused on practical automation for small businesses and teams without in-house AI engineering capacity.
 
-The work is intentionally grounded: audit the workflow, build the smallest useful system, deploy into the existing operating environment, and support it after launch.
+The motion is intentionally direct: audit the workflow, identify the repetitive work that actually matters, build a useful system, deploy it into the existing operating environment, and support it after launch.
 
 ## Private and In-Progress Builds
 
-Some of the most relevant work is private or still in active development:
+Some of the most relevant work is private, unfinished, or tied to operating context that should not be public:
 
 - AI workflow audit and research systems
 - local-first SaaS research and role intelligence tools
 - agent dashboards and operating-control prototypes
 - merchant operations rescue queues for inventory and feed issues
-- collaborative planning and internal automation products
+- internal agent memory, review, and execution systems
+- collaborative planning and automation products
 
-I keep these private when they contain client context, unfinished product direction, or operational details that should not be public. The public artifacts above show the same operating philosophy without exposing sensitive work.
+I keep this work private when it contains client context, product direction, or operational details. The public projects and writing show the same bias: practical systems, visible evidence, and less tolerance for AI theater.
 
-## How I Think About AI Deployment
+## Operating Beliefs
 
-Most failed AI projects do not fail because the model is too weak. They fail because the workflow was poorly understood, the system had no measurable acceptance criteria, the integration path was brittle, or nobody defined what should happen when the agent is uncertain.
+Most failed AI projects do not fail because the model is weak. They fail because the workflow was misunderstood, the integration path was brittle, the success criteria were vague, or the system had no answer for what happens when the agent is wrong.
 
-My bias is to build systems that are boring in the right places:
+My default approach:
 
-- structured inputs and outputs where possible
-- clear tool boundaries
-- audit trails for prompts, tool calls, and decisions
-- small autonomy increments instead of broad permissions
-- evals tied to real examples and business outcomes
-- human review at the point of risk, not as a blanket tax on every action
+- start with the workflow, not the model
+- use AI only where the ambiguity justifies it
+- prefer structured outputs and explicit tool boundaries
+- log prompts, tool calls, decisions, and evidence
+- start with the smallest unit of autonomy
+- evaluate against real examples, not synthetic confidence
+- put human review exactly where risk enters the system
 
 ## Background
 
